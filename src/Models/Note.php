@@ -26,7 +26,7 @@ class Note extends Model
     {
         $createdBy = $this->createdBy;
         if (empty($createdBy)) return null;
-        return config('gravatar.url'). $createdBy->image;
+        return config('images.GRAVATAR_URL'). $createdBy->image;
     }
 
     public function getCanDeleteAttribute()
