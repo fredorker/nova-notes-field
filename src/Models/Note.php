@@ -26,7 +26,7 @@ class Note extends Model
     {
         $createdBy = $this->createdBy;
         if (empty($createdBy)) return null;
-        return 'https://www.gravatar.com/avatar/' . md5(strtolower($createdBy->email)) . '?s=300';
+        return config('gravatar.url'). $createdBy->image;
     }
 
     public function getCanDeleteAttribute()
